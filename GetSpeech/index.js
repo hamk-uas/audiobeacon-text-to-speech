@@ -1,3 +1,12 @@
+// Azure serverless function, uses Google text to speech API conservatively with Azure blob caching
+// Copyright 2021 Häme University of Applied Sciences
+// Released under the MIT License
+//
+// Author: Olli.Niemitalo@hamk.fi
+// 
+// Example TSV file (you must place this somewhere and modify the tsv file fetch to try it): example.tsv
+// Example request: http://localhost:7071/api/GetSpeech?find_col=beacon_id&find_val=ovi_sisaan&req_col=message_1&req_lan=fi
+
 function badRequest() {
     context.res.status(400);
     context.res.send();
@@ -45,7 +54,7 @@ module.exports = async function (context, req) {
     // 1. Obtain speech strings from Google Sheet tsv (tab separated values)
     let speechString = undefined;
     let speechStringHash = undefined;
-    const tsvPromise = fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSUOiQbEcR5pcVLqA4Afk8KpSHv6Y6rtnJLITk0xbQrsrgNxFNsbH2HcWer6g1qcnRPxLDFJu3CW4bF/pub?output=tsv") 
+    const tsvPromise = fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vSUOiQbEcR5pcVLqA4Afk8KpSHv6Y6rtnJLITk0xbQrsrgNxFNsbH2HcWer6g1qcnRPxLDFJu3CW4bF/pub?output=tsv&dummy=${Date.now()}`) 
         .then(res => res.text())
         .then(function(tsv) {
             //context.log(tsv);
