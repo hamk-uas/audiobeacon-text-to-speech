@@ -1,5 +1,5 @@
 # audiobeacon-text-to-speech
-Azure serverless function using Google text to speech API with Azure blob caching of audio files. For use with audio beacons.
+An Azure serverless function that uses Google text-to-speech API with Azure blob caching of audio files. For use with audio beacons.
 Copyright 2021 Häme University of Applied Sciences
 Released under MIT license.
 Author: Olli.Niemitalo@hamk.fi
