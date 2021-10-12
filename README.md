@@ -22,7 +22,7 @@ On the same column, a value that matches `find_val` is looked up in the data. Th
 A SHA-256 hash is calculated from the speech text string. The function returns a redirect to the cached audio file if the cached file has an `x-ms-meta-speechstringhash` header matching the hash.
 Otherwise the speech is synthesized and cached with the new hash.
 
-Two secrets are needed, with censored examples:
+Two secrets are needed that are not stored in the repository. Censored examples:
 
 `GetSpeech/cache-storage.json`:
 ```
@@ -38,8 +38,8 @@ Two secrets are needed, with censored examples:
   "type": "service_account",
   "project_id": "***********",
   "private_key_id": "****************************************",
-  "private_key": "-----BEGIN PRIVATE KEY-----\n***...***\n-----END PRIVATE KEY-----\n",
-  "client_email": "service-account-for-***@***************.gserviceaccount.com",
+  "private_key": "-----BEGIN PRIVATE KEY-----\n*************************************...**********************************\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account-for-*******************.gserviceaccount.com",
   "client_id": "*********************",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
