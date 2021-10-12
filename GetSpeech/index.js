@@ -5,7 +5,7 @@
 // Author: Olli.Niemitalo@hamk.fi
 // 
 // Example TSV file (you must place this somewhere and modify the tsv file fetch to try it): example.tsv
-// Example request: http://localhost:7071/api/GetSpeech?find_col=beacon_id&find_val=ovi_sisaan&req_col=message_1&req_lan=fi
+// Example request (in debug): http://localhost:7071/api/GetSpeech?find_col=beacon_id&find_val=ovi_sisaan&req_col=message_1&req_lan=fi
 
 function badRequest() {
     context.res.status(400);
