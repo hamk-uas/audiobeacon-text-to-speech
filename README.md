@@ -21,12 +21,15 @@ Otherwise the speech is synthesized and cached with the new hash in x-ms-meta-sp
 Two secrets are needed, with censored examples:
 
 GetSpeech/cache-storage.json:
+```
 {
     "key": "****************************************************************************************",
     "connStr": "DefaultEndpointsProtocol=https;AccountName=soundbeaconfunc;AccountKey=****************************************************************************************;EndpointSuffix=core.windows.net"
 }
+```
 
 GetSpeech/google-services.json:
+```
 {
   "type": "service_account",
   "project_id": "***********",
@@ -39,3 +42,4 @@ GetSpeech/google-services.json:
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account-for-*********************.gserviceaccount.com"
 }
+```
